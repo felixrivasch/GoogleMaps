@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Managment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <script type="text/javascript" src="jquery-1.11.1/jquery-1.11.1.js"></script> -->
+    <!-- <script type="text/javascript" src="jquery-1.11.3/jquery-1.11.3.js"></script> -->
+    <script type="text/javascript" src="jquery-2.2.4/jquery-2.2.4.js"></script>
+    <!-- <script type="text/javascript" src="jquery-3.2.1/jquery-3.2.1.js"></script> -->
+	<script type="text/javascript" src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript" src="js/registryHotel.js"></script>
+</head>
+<body>
+	<div data-role="page" id="page-management">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Gestión de Hoteles</h1>
+		</div>
+		<div data-role="content">
+			<a id="btn-go-registry" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-right">Registrar Hotel</a>
+			<a id="btn-go-list" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-right">Listar Hotel</a>
+		</div>
+		<div data-role="footer">
+			<p align="center">Felix Rivas Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú.</p>
+		</div>
+	</div>
+	<!-- Felix Ri@s Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú. -->
+	<div data-role="page" id="page-registry">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Registro de Hoteles</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<div class="ui-field-contain">
+					<label for="name"><b>Nombre:</b></label>
+					<input type="text" id="name">
+				</div>
+				<!-- <div class="ui-field-contain">
+					<label for="ubiety"></label>
+					<div data-role="content" id="ubiety">
+					</div>
+				</div> -->
+				<div class="ui-field-contain">
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<label for="place-search"><b>Ubicación:</b></label>
+						</div>
+						<div class="ui-block-b">
+							<input type="text" id="place-search" class="ui-mini" placeholder="Nombre de tu hotel" >
+						</div>
+						<div class="ui-block-c">
+							<a  id="btn-search" class="ui-btn ui-mini ui-corner-all ui-icon-search ui-btn-icon-left" data-theme="b">Buscar</a>
+						</div>
+					</div>
+					<div data-role="content" id="ubiety">
+					</div>
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="city"><b>Ciudad:</b></label>
+					<input type="text" id="city">
+				</div>
+				<div class="ui-field-contain">
+					<label for="phone"><b>Teléfono:</b></label>
+					<input type="text" id="phone">
+				</div>
+				<div class="ui-field-contain">
+					<label for="stars"><b>Estrellas:</b></label>
+					<input type="text" id="stars">
+				</div>
+				<a id="btn-registry" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-check ui-btn-icon-left ui-corner-all">Registrar</a>
+				<a id="btn-reg-back-management" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-carat-l ui-btn-icon-left ui-corner-all">Volver</a>
+			</form>
+		</div>
+		<div data-role="footer">
+			<p align="center">Felix Rivas Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú.</p>
+		</div>
+	</div>
+	<!-- Felix Ri@s Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú. -->
+	<div data-role="page" id="page-list">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Lista Hoteles</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<ul data-role="listview" id="list-hotels" data-inset="true">
+					<li><a class=ui-btn>No hay hoteles registrados.</a></li>
+				</ul>
+				<a id="btn-list-back-management" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-carat-l ui-btn-icon-left ui-corner-all">Volver</a>
+			</form>
+		</div>
+		<div data-role="footer">
+			<p align="center">Felix Rivas Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú.</p>
+		</div>
+	</div>
+	<!-- Felix Ri@s Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú. -->
+	<div data-role="page" id="page-data" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Datos Hotel</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-field-contain">
+				<p id="data-hotel"></p>
+				<p><b>Ubicación:</b></p>
+				<div data-role="content" id="ubiety-hotel">
+				</div>
+			</div>
+			<div class="ui-field-contain">
+				<a id="btn-back-list" data-role="button" data-theme="b" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-left ui-corner-all">Lista Hoteles</a>
+			</div>
+		</div>
+		
+		<div data-role="footer">
+			<p align="center">Felix Rivas Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú.</p>
+		</div>
+	</div>
+</body>
+</html>
